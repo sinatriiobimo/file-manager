@@ -1,0 +1,307 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
+// variables
+$font: 'DM Sans', sans-serif;
+$sd-width: 56px; 
+$nav-width: 100%;
+$black: #15171F;
+$grey: #E8EAEE;
+$blue: #045EFE;
+$salmon: #FEA485;
+$darkWhite: #ebebeb;
+$darkGrey: #888181;
+$darkBlueSoft: #a19afa;
+$darkBlue: #1a1838;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font;
+}
+
+.content {
+    margin-left: 5rem;
+    transition: .8s;
+}
+
+// SIDEBAR
+
+.sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $sd-width;
+    height: 100vh;
+    padding: 1.25rem .5rem 2rem;
+    transition: .5s;
+    z-index: 2;
+    background-color: $grey;
+}
+
+
+
+.nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    // partLogo
+    &__logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+        padding: 0 .5rem;
+        background-color: $grey;
+        &::hover {
+            text-decoration: none;
+        }
+
+        &-icon {
+            margin-right: 1.2rem;
+            color: $darkBlue;
+        }
+        &-text {
+            color: $darkBlue;
+            background-color: $grey;
+            font-weight: 700;
+        }
+    }
+    // partToggle
+    &__toggle {
+        position: absolute;
+        top: 2.5rem;
+        right: -.6rem;
+        width: 28px;
+        height: 28px;
+        background-color: $blue;
+        border-radius: 50%;
+        color: $grey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: .5s;
+        .icon {
+            background-color: $blue;
+        }
+    }
+    // partLink
+    &__link {
+        display: flex;
+        align-items: center;
+        padding: .5rem;
+        margin-bottom: 1rem;
+        background-color: $grey;
+        border-radius: .5rem;
+        color: $darkBlue;
+        transition: .3s;
+        &:hover {
+            background-color: $blue;
+            color: $grey;
+            font-weight: 700;
+            text-decoration: none;
+        }
+    }
+
+    &__icon {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+    }
+
+    &__text {
+        font-weight: 500;
+    }
+}
+
+// ShowMenu
+.show {
+    width: $sd-width + 112px;
+}
+.rotate {
+    transform: rotate(180deg);
+    transition: .5s;
+}
+.active {
+    background-color: $blue;
+    color: $grey;
+}
+.expander {
+    padding: 1rem 0 0 7rem;
+}
+
+
+// NAVBAR
+.navbar-panel {
+    position: relative;
+    display: flex;
+    height: 65px;
+    box-sizing: border-box;
+    justify-content: flex-end;
+    padding-right: 50px;
+    .navbar-login {
+        margin-top: 12px;
+        width: 200px;
+        height: 45px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        background-color: $darkWhite;
+        .user-avatar {
+            width: 47px;
+            &__text {
+                margin-left: 19px;
+                font-size: 13px;
+                font-weight: 500;
+                color: $darkBlue;
+            }
+        }
+       .dropdown-custom {
+           text-decoration: none;
+           .icon {
+               font-size: 12px;
+               margin-top: 20px;
+           }
+       }
+       .menu-custom {
+           position: absolute;
+           width: 70px;
+           margin-top: 11px;
+           margin-left: -11px;
+           border: none;
+           border-bottom-right-radius: 7px;
+           border-bottom-left-radius: 7px;
+           background-color: $darkWhite;
+           .item-custom {
+               .icon-custom {
+                   margin-right: 10px;
+                   color: $blue;
+                }
+                span {
+                    color: $darkBlue;
+                }
+           }
+       }
+       
+    }
+}
+
+//STAT-INFO
+.stat-info {
+    background: linear-gradient($grey, $darkWhite);
+    height: 130px;
+    .card-info {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+    }
+    .iconics {
+        color: $darkBlue;
+        font-size: 90px;
+    }
+    .stat-text {
+        margin-top: 17px;
+        font-size: 20px;
+        color: $darkBlue;
+    }
+    .stat-heading {
+        margin-top: -5px;
+        font-size: 15px;
+        font-weight: 600;
+        color: $darkBlue;
+    }
+}
+
+.carousel {
+    margin: 30px auto;
+    width: 100%;
+    height: 500px;
+    .carousel-inner {
+        width: 100%;
+        height: 500px;
+        border-radius: 10px;
+    }
+    .carousel-item img {
+        filter: brightness(50%);
+    }
+    .carousel-item .display-4 {
+        margin-top: -280px;
+    }
+}
+
+.upload-panel {
+    margin-left: -108px;
+    .card-header {
+        background: $blue;
+        color: $darkWhite;
+    }
+    .card-body {
+        background: $grey;
+    }
+    .list-group-item {
+        background: $darkGrey;
+    }
+}
+
+
+
+@media (max-width: 380px) {
+    .upload-flex {
+        margin-left: -38px;
+        width: 420px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .download-section {
+        display: none;
+    }
+}
+
+// LOGIN
+.reglo-section {
+    background: $black;
+    color: $grey;
+}
+
+.login-section {
+    margin: 0;
+    padding: 0;
+}
+.big-banner {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("/images/register.png"); 
+}
+
+.btn-register {
+    background: $blue;
+    color: $darkWhite;
+    &:hover {
+        background: #2ECAFA;
+        color: $white;
+        transition: .5s;
+    }
+}
+
+.admin-index {
+    margin-top: 5%;
+}
+
+.btn-p {
+    background-color: $blue;
+    color: $grey;
+}
